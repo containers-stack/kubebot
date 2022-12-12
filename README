@@ -8,9 +8,7 @@ kubechat uses OpenAI and ChatGPT to generate the kubectl commands
 
 clone this repo
 
-```bash
-git clone https://github.com/containers-stack/kubebot.git
-```
+`git clone https://github.com/containers-stack/kubebot.git`
 
 create a config.json file with this content:
 ```json
