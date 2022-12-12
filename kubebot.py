@@ -5,7 +5,7 @@ import os
 
 os.system('clear')
 
-config = open('config.json')
+config = open('openai-config.json')
 
 data = json.load(config)
 
