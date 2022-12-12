@@ -1,5 +1,4 @@
 # kubechat
-
 kubechat is a POC tool that runs kubectl commands based on the description of the need from the user
 
 kubechat uses OpenAI and ChatGPT to generate the kubectl commands
