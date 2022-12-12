@@ -11,18 +11,26 @@ clone this repo
 git clone https://github.com/containers-stack/kubebot.git
 ```
 
-create a config.json file with this content:
+create a openai-config.json file with this content:
 ```json
 {
     "authorization": "Bearer <NEED_TO_GET_THE_TOKEN_FROM https://chat.openai.com/chat>",
     "cookie": "<NEED_TO_GET_THE_COOKIE_FROM https://chat.openai.com/chat>" 
-
 }
 ```
+
+## To get the  acccess_tokne and cookie 
+    1. Go to  https://chat.openai.com/chat
+    2. Open developer console
+    3. Go to networking Tab
+    4. Seach for request with 'conversation' name 
+    5. copy the authorization & cookie header from the requst header ans sace them into openai-config.json 
+
 ## Usage
 
 ```bash
 cd ./kubebot
+pip install -r requirement.txt 
 python ./kubebot.py
 ```
 
