@@ -20,10 +20,10 @@ create a openai-config.json file with this content:
 ```
 
 ## To get the  acccess_tokne and cookie 
-    1. Go to  https://chat.openai.com/chat
-    2. Open developer console
-    3. Go to networking Tab
-    4. Seach for request with 'conversation' name 
+    1. Go to https://chat.openai.com/chat
+    2. Open the developer console
+    3. Go to Networking Tab
+    4. Search for request with 'conversation' name 
     5. copy the authorization & cookie header from the requst header ans sace them into openai-config.json 
 
 ## Usage
