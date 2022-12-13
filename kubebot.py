@@ -2,8 +2,18 @@ import requests
 import json
 import subprocess
 import os
+import colorama
+import sys
+import itertools
+import threading
+import time
 
 os.system('clear')
+
+from colorama import Fore,Style,Back
+colorama.init()
+
+YELLOW = "\x1b[1;33;40m" 
 
 config = open('openai-config.json')
 
@@ -11,8 +21,23 @@ data = json.load(config)
 
 url = "https://chat.openai.com/backend-api/conversation"
 
+#here is the animation
+def animate():
+    for c in itertools.cycle(['|', '/', '-', '\\']):
+        if done:
+            break
+        sys.stdout.write('\rloading ' + c)
+        sys.stdout.flush()
+        time.sleep(0.1)
+
 while(True):
-    user_input = input("How we can help: ")
+    print(f"\n{Fore.GREEN}How we can help? ", end='')
+    user_input = input()
+    Fore.WHITE
+    done = False  
+    
+    t = threading.Thread(target=animate)
+    t.start()
 
     payload = json.dumps({
         "action": "next",
@@ -47,6 +72,8 @@ while(True):
     try:
         response = requests.request("POST", url, headers=headers, data=payload)
 
+        done = True
+
         if response.status_code != 200:
             print("Reponse Status:" + str(response.status_code))
 
@@ -60,12 +87,13 @@ while(True):
 
         msg = msg.split("\n")[0]
 
-        print(msg)
-
-        p = subprocess.Popen(msg, stdout=subprocess.PIPE, shell=True)
-
-        print(p.communicate())
+        print('\n')
+        p = subprocess.Popen(msg, stdout=subprocess.PIPE, shell=True, universal_newlines=True)
+        for line in p.stdout:
+            sys.stdout.write(f"\n{Fore.MAGENTA}{line}")
+            sys.stdout.flush()
 
     except Exception as ex:
         print(str(ex))
         print(msg)
+        done = True
