@@ -3,6 +3,8 @@ kubechat is a POC tool that runs kubectl commands based on the description of th
 
 kubechat uses OpenAI and ChatGPT to generate the kubectl commands
 
+https://user-images.githubusercontent.com/27952544/207239553-5a21a370-40f6-44a1-9617-0430df21bc2d.mp4
+
 ## Installation
 
 clone this repo
@@ -23,6 +25,10 @@ create a openai-config.json file with this content:
     1. Go to https://chat.openai.com/chat
     2. Open the developer console
     3. Go to Networking Tab
+
+https://user-images.githubusercontent.com/27952544/207239273-92f815fe-9ac6-4cf4-9699-a11f937bc6d6.mp4
+
+
     4. Search for request with 'conversation' name 
     5. copy the authorization & cookie header from the requst header ans sace them into openai-config.json 
 
