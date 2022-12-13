@@ -3,6 +3,8 @@ kubechat is a POC tool that runs kubectl commands based on the description of th
 
 kubechat uses OpenAI and Completion to generate the kubectl commands
 
+https://user-images.githubusercontent.com/27952544/207239553-5a21a370-40f6-44a1-9617-0430df21bc2d.mp4
+
 ## Installation
 
 clone this repo
